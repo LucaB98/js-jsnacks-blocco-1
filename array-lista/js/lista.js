@@ -54,6 +54,6 @@ button.addEventListener('click', function(){
         result.innerText = "Trovato! Devo solo preparare il cocktail.";
     } else {
         input.classList.add('is-invalid');
-        error.innerText = "Oh no, devo uscire a comprare il cocomero!";
+        error.innerText = "Oh no, devo uscire a comprare!";
     }
 });
