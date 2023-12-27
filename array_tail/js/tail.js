@@ -24,7 +24,6 @@ console.log(input, button, form, result, error);
 button.addEventListener('click', function(){
 
     const quantityNumber = []
-    let saveNumber =+ '';
 
     if(isNaN(input.value) || input.value < 1 || input.value > 100){
         input.classList.add('is-invalid');
@@ -34,17 +33,20 @@ button.addEventListener('click', function(){
         input.classList.remove('is-invalid');
         for(let i = 0; i < input.value; i++){
             const number = Math.floor(Math.random() * 100) + 1;
-            saveNumber =+ number;
-            console.log(saveNumber);
-            quantityNumber.push(saveNumber);
+           quantityNumber.push(number)
         };
-    
-        console.log(quantityNumber);
-        result.innerText = quantityNumber[quantityNumber.length-5];
+        console.log(quantityNumber)
+
+        
+       
        
     }
         
-    
+    let numElementiDaStampare = parseInt(prompt("Inserisci il numero di elementi da stampare (massimo " + input.value + "):"));
+
+    numElementiDaStampare = Math.min(numElementiDaStampare, input.value);
+
+    result.innerText = quantityNumber.slice(-numElementiDaStampare);
 
     
 });
